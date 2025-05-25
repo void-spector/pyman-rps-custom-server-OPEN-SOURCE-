@@ -48,7 +48,7 @@ def startgame():
   
   userinput = float(input(Fore.LIGHTBLUE_EX + "1 2 3 4. "))
   try:
-   requests.get("https://45.23.232.171:3007/update",verify='auth/cert.pem')
+   requests.get("http://localhost:5362/update",verify='auth/cert.pem')
   
   
    time.sleep(0.7)
@@ -93,22 +93,12 @@ def startgame():
   print(Fore.RED + "cpu's response " + randomshoot)
 
 def serverconnect():
- try:
-   n1 = requests.get("https://45.23.232.171:3007/getmodblock", verify='auth/cert.pem')
-   if n1.text.strip() == "true":
-     
-     print(Fore.RED + "GAME ACCESS RESTRICTED")
-     print(Fore.LIGHTRED_EX + "you are banned from pyman rps")
-     print(Fore.LIGHTRED_EX + "BAN IS PERMANENT")
-     time.sleep(3000000)
-     exit()
-   else:
-     pass
+
 
      
-   requests.get("https://45.23.232.171:3007", verify='auth/cert.pem')
+   requests.get("http://localhost:5362", verify='auth/cert.pem')
   
-   c1 = requests.get("https://45.23.232.171:3007/version", verify='auth/cert.pem')
+   c1 = requests.get("http://localhost:5362/version", verify='auth/cert.pem')
    
    
    if c1.text == clientversion:
