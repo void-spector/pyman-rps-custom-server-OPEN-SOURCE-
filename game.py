@@ -48,7 +48,7 @@ def startgame():
   
   userinput = float(input(Fore.LIGHTBLUE_EX + "1 2 3 4. "))
   try:
-   requests.get("http://localhost:5362/update",verify='auth/cert.pem')
+   requests.get("http://localhost:5362/update")
   
   
    time.sleep(0.7)
@@ -96,9 +96,9 @@ def serverconnect():
 
 
      
-   requests.get("http://localhost:5362", verify='auth/cert.pem')
+   requests.get("http://localhost:5362")
   
-   c1 = requests.get("http://localhost:5362/version", verify='auth/cert.pem')
+   c1 = requests.get("http://localhost:5362/version")
    
    
    if c1.text == clientversion:
@@ -113,7 +113,7 @@ def serverconnect():
  
    
    try:
-     requests.get("https://45.23.232.171:3007/tempprofile",verify='auth/cert.pem')
+     requests.get("http://localhost:5362/tempprofile")
    except ConnectionError:
      print(Fore.RED + "Failed to log into session-profile: Code 2")
      time.sleep(30000)
