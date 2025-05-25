@@ -14,3 +14,7 @@ def returnsession():
 @app.route("/version") # i made it return a custom version
 def returnversion():
   return "voidspector local"
+
+
+if __name__ == "__main__":
+  app.run("0.0.0.0",port=5362,debug=False) # keep debug false if your streaming the code or showing it to someone
